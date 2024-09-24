@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <title>Happy Birthday!</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="header_text">🌟 It's Your Special Day! 🌟</h1>
+      <p class="sub_text">Do you want to celebrate with me?</p>
+
+      <div class="gif_container">
+        <img
+          src="https://i.postimg.cc/pdNqPxx1/milk-and-mocha-cute.gif"
+          alt="Cute birthday animated illustration"
+        />
+      </div>
+
+      <div class="buttons">
+        <button class="btn" id="yesButton" onclick="nextPage()">🥳 Yes, Let's Celebrate! 🥳</button>
+        <button
+          class="btn"
+          id="noButton"
+          onmouseover="moveButton()"
+          onclick="moveButton()"
+          ontouchstart="moveButton()"
+    >❌ No, No Partyyy! 😤</button>
+       
+      </div>
+    </div>
+
+    <div class="confetti" id="confetti"></div>
+
+    <!-- Sound effect for Yes -->
+    <audio id="cheerSound" src="https://www.soundjay.com/misc/sounds/kids-cheer-01.mp3"></audio>
+
+    <!-- JavaScript for page interactions -->
+    <script>
+      function nextPage() {
+        // Play sound effect
+        document.getElementById('cheerSound').play();
+        // Navigate to Yes page
+        window.location.href = "yes.html";
+      }
+
+      function moveButton() {
+        var noButton = document.getElementById("noButton");
+        var x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+        var y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+        noButton.style.left = x + "px";
+        noButton.style.top = y + "px";
+      }
+    </script>
+  </body>
+</html>

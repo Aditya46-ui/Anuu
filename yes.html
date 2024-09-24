@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <title>Happy Birthday!</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="header_text">Yay! Happy Birthday!</h1>
+      <p class="sub_text">🎉 Let’s make this day extra special! 🎉</p>
+
+      <div class="gif_container">
+        <img
+          src="https://i.postimg.cc/wTDG30TB/yes.gif"
+          alt="Celebratory balloons"
+        />
+      </div>
+
+      <button class="btn" id="planButton" onclick="startCelebration()">Let's Plan a Party!</button>
+
+      <div class="confetti" id="confetti"></div>
+
+      <!-- Sound effect for Yes -->
+      <audio id="partySound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+
+      <!-- JavaScript for interaction -->
+      <script>
+        function startCelebration() {
+          document.getElementById('partySound').play();
+          // Redirect to WhatsApp
+          const phoneNumber = "+916309180567";
+          const message = "Hi! I'd like to plan a party!";
+          const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+          
+          // Open WhatsApp
+          window.open(whatsappURL, '_blank');
+
+          // Optionally, you can trigger the confetti animation here if needed
+          // document.getElementById("confetti").classList.add("show");
+        }
+      </script>
+    </div>
+  </body>
+</html>
